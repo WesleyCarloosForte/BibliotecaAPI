@@ -26,9 +26,9 @@
 											}
 										],
 										"url": {
-											"raw": "https://localhost:7006/api/Autores/:id",
+											"raw": "http://localhost:7006/api/Autores/:id",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -57,9 +57,9 @@
 													}
 												],
 												"url": {
-													"raw": "https://localhost:7006/api/Autores/:id",
+													"raw": "http://localhost:7006/api/Autores/:id",
 													"host": [
-														"https://localhost:7006"
+														"http://localhost:7006"
 													],
 													"path": [
 														"api",
@@ -113,9 +113,9 @@
 											}
 										},
 										"url": {
-											"raw": "https://localhost:7006/api/Autores/:id",
+											"raw": "http://localhost:7006/api/Autores/:id",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -153,9 +153,9 @@
 													}
 												},
 												"url": {
-													"raw": "https://localhost:7006/api/Autores/:id",
+													"raw": "http://localhost:7006/api/Autores/:id",
 													"host": [
-														"https://localhost:7006"
+														"http://localhost:7006"
 													],
 													"path": [
 														"api",
@@ -191,9 +191,9 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "https://localhost:7006/api/Autores/:id",
+											"raw": "http://localhost:7006/api/Autores/:id",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -222,9 +222,9 @@
 													}
 												],
 												"url": {
-													"raw": "https://localhost:7006/api/Autores/:id",
+													"raw": "http://localhost:7006/api/Autores/:id",
 													"host": [
-														"https://localhost:7006"
+														"http://localhost:7006"
 													],
 													"path": [
 														"api",
@@ -267,9 +267,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://localhost:7006/api/Autores",
+									"raw": "http://localhost:7006/api/Autores",
 									"host": [
-										"https://localhost:7006"
+										"http://localhost:7006"
 									],
 									"path": [
 										"api",
@@ -290,9 +290,9 @@
 											}
 										],
 										"url": {
-											"raw": "https://localhost:7006/api/Autores",
+											"raw": "http://localhost:7006/api/Autores",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -338,9 +338,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:7006/api/Autores",
+									"raw": "http://localhost:7006/api/Autores",
 									"host": [
-										"https://localhost:7006"
+										"http://localhost:7006"
 									],
 									"path": [
 										"api",
@@ -370,9 +370,9 @@
 											}
 										},
 										"url": {
-											"raw": "https://localhost:7006/api/Autores",
+											"raw": "http://localhost:7006/api/Autores",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -413,9 +413,9 @@
 											}
 										],
 										"url": {
-											"raw": "https://localhost:7006/api/Generos/:id",
+											"raw": "http://localhost:7006/api/Generos/:id",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -444,9 +444,9 @@
 													}
 												],
 												"url": {
-													"raw": "https://localhost:7006/api/Generos/:id",
+													"raw": "http://localhost:7006/api/Generos/:id",
 													"host": [
-														"https://localhost:7006"
+														"http://localhost:7006"
 													],
 													"path": [
 														"api",
@@ -500,9 +500,9 @@
 											}
 										},
 										"url": {
-											"raw": "https://localhost:7006/api/Generos/:id",
+											"raw": "http://localhost:7006/api/Generos/:id",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -540,9 +540,9 @@
 													}
 												},
 												"url": {
-													"raw": "https://localhost:7006/api/Generos/:id",
+													"raw": "http://localhost:7006/api/Generos/:id",
 													"host": [
-														"https://localhost:7006"
+														"http://localhost:7006"
 													],
 													"path": [
 														"api",
@@ -578,9 +578,9 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "https://localhost:7006/api/Generos/:id",
+											"raw": "http://localhost:7006/api/Generos/:id",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -609,9 +609,9 @@
 													}
 												],
 												"url": {
-													"raw": "https://localhost:7006/api/Generos/:id",
+													"raw": "http://localhost:7006/api/Generos/:id",
 													"host": [
-														"https://localhost:7006"
+														"http://localhost:7006"
 													],
 													"path": [
 														"api",
@@ -654,9 +654,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://localhost:7006/api/Generos",
+									"raw": "http://localhost:7006/api/Generos",
 									"host": [
-										"https://localhost:7006"
+										"http://localhost:7006"
 									],
 									"path": [
 										"api",
@@ -677,9 +677,9 @@
 											}
 										],
 										"url": {
-											"raw": "https://localhost:7006/api/Generos",
+											"raw": "http://localhost:7006/api/Generos",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -725,9 +725,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:7006/api/Generos",
+									"raw": "http://localhost:7006/api/Generos",
 									"host": [
-										"https://localhost:7006"
+										"http://localhost:7006"
 									],
 									"path": [
 										"api",
@@ -757,9 +757,9 @@
 											}
 										},
 										"url": {
-											"raw": "https://localhost:7006/api/Generos",
+											"raw": "http://localhost:7006/api/Generos",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -800,9 +800,9 @@
 											}
 										],
 										"url": {
-											"raw": "https://localhost:7006/api/Libros/:id",
+											"raw": "http://localhost:7006/api/Libros/:id",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -831,9 +831,9 @@
 													}
 												],
 												"url": {
-													"raw": "https://localhost:7006/api/Libros/:id",
+													"raw": "http://localhost:7006/api/Libros/:id",
 													"host": [
-														"https://localhost:7006"
+														"http://localhost:7006"
 													],
 													"path": [
 														"api",
@@ -887,9 +887,9 @@
 											}
 										},
 										"url": {
-											"raw": "https://localhost:7006/api/Libros/:id",
+											"raw": "http://localhost:7006/api/Libros/:id",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -927,9 +927,9 @@
 													}
 												},
 												"url": {
-													"raw": "https://localhost:7006/api/Libros/:id",
+													"raw": "http://localhost:7006/api/Libros/:id",
 													"host": [
-														"https://localhost:7006"
+														"http://localhost:7006"
 													],
 													"path": [
 														"api",
@@ -965,9 +965,9 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "https://localhost:7006/api/Libros/:id",
+											"raw": "http://localhost:7006/api/Libros/:id",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -996,9 +996,9 @@
 													}
 												],
 												"url": {
-													"raw": "https://localhost:7006/api/Libros/:id",
+													"raw": "http://localhost:7006/api/Libros/:id",
 													"host": [
-														"https://localhost:7006"
+														"http://localhost:7006"
 													],
 													"path": [
 														"api",
@@ -1041,9 +1041,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://localhost:7006/api/Libros",
+									"raw": "http://localhost:7006/api/Libros",
 									"host": [
-										"https://localhost:7006"
+										"http://localhost:7006"
 									],
 									"path": [
 										"api",
@@ -1064,9 +1064,9 @@
 											}
 										],
 										"url": {
-											"raw": "https://localhost:7006/api/Libros",
+											"raw": "http://localhost:7006/api/Libros",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -1112,9 +1112,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:7006/api/Libros",
+									"raw": "http://localhost:7006/api/Libros",
 									"host": [
-										"https://localhost:7006"
+										"http://localhost:7006"
 									],
 									"path": [
 										"api",
@@ -1144,9 +1144,9 @@
 											}
 										},
 										"url": {
-											"raw": "https://localhost:7006/api/Libros",
+											"raw": "http://localhost:7006/api/Libros",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -1179,9 +1179,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://localhost:7006/api/Libros/filter?titulo=velit ullamco eiusmod minim aute&pageNumber=97408795&maxItem=97408795",
+									"raw": "http://localhost:7006/api/Libros/filter?titulo=velit ullamco eiusmod minim aute&pageNumber=97408795&maxItem=97408795",
 									"host": [
-										"https://localhost:7006"
+										"http://localhost:7006"
 									],
 									"path": [
 										"api",
@@ -1217,9 +1217,9 @@
 											}
 										],
 										"url": {
-											"raw": "https://localhost:7006/api/Libros/filter?titulo=velit ullamco eiusmod minim aute&pageNumber=97408795&maxItem=97408795",
+											"raw": "http://localhost:7006/api/Libros/filter?titulo=velit ullamco eiusmod minim aute&pageNumber=97408795&maxItem=97408795",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -1275,9 +1275,9 @@
 											}
 										],
 										"url": {
-											"raw": "https://localhost:7006/api/Usuarios/:id",
+											"raw": "http://localhost:7006/api/Usuarios/:id",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -1306,9 +1306,9 @@
 													}
 												],
 												"url": {
-													"raw": "https://localhost:7006/api/Usuarios/:id",
+													"raw": "http://localhost:7006/api/Usuarios/:id",
 													"host": [
-														"https://localhost:7006"
+														"http://localhost:7006"
 													],
 													"path": [
 														"api",
@@ -1362,9 +1362,9 @@
 											}
 										},
 										"url": {
-											"raw": "https://localhost:7006/api/Usuarios/:id",
+											"raw": "http://localhost:7006/api/Usuarios/:id",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -1402,9 +1402,9 @@
 													}
 												},
 												"url": {
-													"raw": "https://localhost:7006/api/Usuarios/:id",
+													"raw": "http://localhost:7006/api/Usuarios/:id",
 													"host": [
-														"https://localhost:7006"
+														"http://localhost:7006"
 													],
 													"path": [
 														"api",
@@ -1440,9 +1440,9 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "https://localhost:7006/api/Usuarios/:id",
+											"raw": "http://localhost:7006/api/Usuarios/:id",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -1471,9 +1471,9 @@
 													}
 												],
 												"url": {
-													"raw": "https://localhost:7006/api/Usuarios/:id",
+													"raw": "http://localhost:7006/api/Usuarios/:id",
 													"host": [
-														"https://localhost:7006"
+														"http://localhost:7006"
 													],
 													"path": [
 														"api",
@@ -1516,9 +1516,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://localhost:7006/api/Usuarios",
+									"raw": "http://localhost:7006/api/Usuarios",
 									"host": [
-										"https://localhost:7006"
+										"http://localhost:7006"
 									],
 									"path": [
 										"api",
@@ -1539,9 +1539,9 @@
 											}
 										],
 										"url": {
-											"raw": "https://localhost:7006/api/Usuarios",
+											"raw": "http://localhost:7006/api/Usuarios",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -1569,9 +1569,9 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "https://localhost:7006/api/Usuarios?email=velit ullamco eiusmod minim aute",
+									"raw": "http://localhost:7006/api/Usuarios?email=velit ullamco eiusmod minim aute",
 									"host": [
-										"https://localhost:7006"
+										"http://localhost:7006"
 									],
 									"path": [
 										"api",
@@ -1598,9 +1598,9 @@
 											}
 										],
 										"url": {
-											"raw": "https://localhost:7006/api/Usuarios?email=velit ullamco eiusmod minim aute",
+											"raw": "http://localhost:7006/api/Usuarios?email=velit ullamco eiusmod minim aute",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -1639,9 +1639,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://localhost:7006/api/Usuarios/filter?nombre=name&pageNumber=97408795&maxItem=97408795",
+									"raw": "http://localhost:7006/api/Usuarios/filter?nombre=name&pageNumber=97408795&maxItem=97408795",
 									"host": [
-										"https://localhost:7006"
+										"http://localhost:7006"
 									],
 									"path": [
 										"api",
@@ -1677,9 +1677,9 @@
 											}
 										],
 										"url": {
-											"raw": "https://localhost:7006/api/Usuarios/filter?nombre=",
+											"raw": "http://localhost:7006/api/Usuarios/filter?nombre=",
 											"host": [
-												"https://localhost:7006"
+												"http://localhost:7006"
 											],
 											"path": [
 												"api",
@@ -1740,9 +1740,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:7006/api/Usuarios/registrar/login",
+									"raw": "http://localhost:7006/api/Usuarios/registrar/login",
 									"host": [
-										"https://localhost:7006"
+										"http://localhost:7006"
 									],
 									"path": [
 										"api",
@@ -1774,7 +1774,7 @@
 											}
 										},
 										"url": {
-											"raw": "https://localhost:7006/api/Usuarios/registrar/login",
+											"raw": "http://localhost:7006/api/Usuarios/registrar/login",
 											"host": [
 												"{{baseUrl}}"
 											],
