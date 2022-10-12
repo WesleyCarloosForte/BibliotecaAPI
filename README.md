@@ -1,4 +1,8 @@
 # ApiBiblioteca
+API
+URLBASE = http://localhost:5006/
+Estructura =http://localhost:5006/api/rutaControlador
+
 Esta api simula el funcionamiento de una biblioteca y cuenta con autenticación y autorización mediante roles (usuarios y administradores).
 Permite hacer todas las acciones básicas de un CRUD en todas las entidades:
 
