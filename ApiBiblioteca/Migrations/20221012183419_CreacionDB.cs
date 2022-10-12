@@ -62,6 +62,23 @@ namespace ApiBiblioteca.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Persona",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Nombre = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Apellido = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    FechaNacimiento = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    persona_Type = table.Column<string>(type: "TEXT", nullable: false),
+                    IdentityUserId = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Persona", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -168,28 +185,6 @@ namespace ApiBiblioteca.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Persona",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nombre = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    Apellido = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    FechaNacimiento = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    persona_Type = table.Column<string>(type: "TEXT", nullable: false),
-                    IdentityUserId = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Persona", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Persona_AspNetUsers_IdentityUserId",
-                        column: x => x.IdentityUserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Libros",
                 columns: table => new
                 {
@@ -263,11 +258,6 @@ namespace ApiBiblioteca.Migrations
                 name: "IX_Libros_GeneroId",
                 table: "Libros",
                 column: "GeneroId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Persona_IdentityUserId",
-                table: "Persona",
-                column: "IdentityUserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -294,13 +284,13 @@ namespace ApiBiblioteca.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
+                name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
                 name: "Generos");
 
             migrationBuilder.DropTable(
                 name: "Persona");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
         }
     }
 }

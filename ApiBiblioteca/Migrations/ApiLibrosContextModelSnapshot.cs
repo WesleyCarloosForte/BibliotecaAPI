@@ -298,8 +298,6 @@ namespace ApiBiblioteca.Migrations
                     b.Property<string>("IdentityUserId")
                         .HasColumnType("TEXT");
 
-                    b.HasIndex("IdentityUserId");
-
                     b.HasDiscriminator().HasValue("usuario_base");
                 });
 
@@ -371,15 +369,6 @@ namespace ApiBiblioteca.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("ApiBiblioteca.Models.Usuario", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "IdentityUser")
-                        .WithMany()
-                        .HasForeignKey("IdentityUserId");
-
-                    b.Navigation("IdentityUser");
                 });
 
             modelBuilder.Entity("ApiBiblioteca.Models.Genero", b =>
