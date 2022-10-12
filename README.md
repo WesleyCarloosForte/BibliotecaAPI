@@ -3,6 +3,11 @@ API
 URLBASE = http://localhost:5006/
 Estructura =http://localhost:5006/api/rutaControlador
 
+Cómo ejecutar el proyecto:
+Abrir el el archivo (Solucion) ApiBiblioteca.sln en VIsual studio (2022)
+![image](https://user-images.githubusercontent.com/54281827/195437936-73cc1f9c-9826-4eae-879a-047c3bb45df4.png)
+
+
 Esta api simula el funcionamiento de una biblioteca y cuenta con autenticación y autorización mediante roles (usuarios y administradores).
 Permite hacer todas las acciones básicas de un CRUD en todas las entidades:
 
@@ -22,11 +27,15 @@ Tecnologías
 -Linq
 -Inyección de dependencia 
 
+IDE
+visual studio community 2022
+
 Estructura del proyecto: 
 
 ![image](https://user-images.githubusercontent.com/54281827/195429768-d4963081-8ee1-48ae-80db-89c5e8734ecb.png)
 
 Documentacion completa (Swagger)
+La documentación en swagger se abrirá automáticamente cuando ejecutes el proyecto en visual studio 
 ![image](https://user-images.githubusercontent.com/54281827/195430987-916f6aa5-6adf-4948-a0b5-3d79ddbe880d.png)
 
 Postman Collection
