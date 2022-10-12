@@ -29,6 +29,9 @@ Estructura del proyecto:
 Documentacion completa (Swagger)
 ![image](https://user-images.githubusercontent.com/54281827/195430987-916f6aa5-6adf-4948-a0b5-3d79ddbe880d.png)
 
+Postman Collection
+![image](https://user-images.githubusercontent.com/54281827/195432557-446780e4-d3e6-4952-a30a-8f57cdc6bbcc.png)
+
 
 Swagger
 ![image](https://user-images.githubusercontent.com/54281827/195430522-1287f54c-d393-470b-932e-f13cc293650b.png)
