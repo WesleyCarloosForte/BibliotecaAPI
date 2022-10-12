@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Entidades
+namespace ApiBiblioteca.DTO.UsuarioDTO
 {
-    public class Persona
+    public class UsuarioGetDTO
     {
         [Key]
         public int Id { get; set; }
@@ -20,6 +15,8 @@ namespace Entidades
         [MinLength(3)]
         public string Apellido { get; set; }
         [Required]
-        public DateOnly FechaNacimiento { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime FechaNacimiento { get; set; }
+        public string Rol { get; set; }
     }
 }

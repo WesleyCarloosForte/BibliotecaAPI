@@ -5,6 +5,7 @@ using ApiBiblioteca.DTO.Permisos;
 using ApiBiblioteca.DTO.UsuarioDTO;
 using ApiBiblioteca.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 
 namespace ApiBiblioteca.AutoMapper
 {
@@ -27,17 +28,18 @@ namespace ApiBiblioteca.AutoMapper
             CreateMap<LibroGetDTO, Libro>();
             CreateMap<Libro, LibroGetDTO>();
 
-            CreateMap<PermisosDTO, Permisos>();
-            CreateMap<Permisos, PermisosDTO>();
-
-            CreateMap<PermisosGetDTO, Permisos>();
-            CreateMap<Permisos, PermisosGetDTO>();
 
             CreateMap<UsuarioDTO, Usuario>();
             CreateMap<Usuario, UsuarioDTO>();
 
+            CreateMap<UsuarioIdentityDTO, IdentityUser>();
+            CreateMap<IdentityUser, UsuarioIdentityDTO>();
 
+            CreateMap<UsuarioDTO, Usuario>();
+            CreateMap<Usuario, UsuarioDTO>();
 
+            CreateMap<IdentityUser, Usuario>();
+            CreateMap<Usuario, IdentityUser>();
 
         }
         

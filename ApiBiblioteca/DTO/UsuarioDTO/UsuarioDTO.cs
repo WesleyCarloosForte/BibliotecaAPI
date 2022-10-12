@@ -18,15 +18,7 @@ namespace ApiBiblioteca.DTO.UsuarioDTO
         [Required]
         [DataType(DataType.Date)]
         public DateTime FechaNacimiento { get; set; }
-        [Required]
-        [MaxLength(30)]
-        [MinLength(4)]
-        public string Login { get; set; }
-        [Required]
-        [MaxLength(50)]
-        [MinLength(6)]
-        public string Password { get; set; }
-        public PermisosGetDTO Permisos { get; set; }
+        public UsuarioIdentityDTO IdentityUser { get; set; }
 
     }
 }

@@ -3,6 +3,7 @@ using System;
 using ApiBiblioteca.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiBiblioteca.Migrations
 {
     [DbContext(typeof(ApiLibrosContext))]
-    partial class ApiLibrosContextModelSnapshot : ModelSnapshot
+    [Migration("20221012160551_CreacionDB")]
+    partial class CreacionDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.10");

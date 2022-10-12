@@ -9,6 +9,8 @@ using ApiBiblioteca.Data;
 using ApiBiblioteca.Models;
 using ApiBiblioteca.DTO.Libro;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ApiBiblioteca.Controllers
 {
@@ -25,7 +27,13 @@ namespace ApiBiblioteca.Controllers
         }
 
         // GET: api/Libroes
+        /// <summary>
+        /// Devuelve un listado de todos los libros 
+        /// El usuario debe estar autenticado
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<IEnumerable<LibroGetDTO>>> GetLibros()
         {
             var libros = await _context.Libros.Include("Genero").ToListAsync();
@@ -33,8 +41,32 @@ namespace ApiBiblioteca.Controllers
             return libroaGetDTO;
         }
 
-        // GET: api/Libroes/5
+        /// <summary>
+        /// Devuelve un listado de todos los libros filtrando por titulo 
+        /// Paginando cantidad maxima por pagina(maxItem) y numero de pagina(pageNumber)
+        /// La paginacion empieza en 0
+        /// El usuario debe estar autenticado
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("filter")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<ActionResult<IEnumerable<LibroGetDTO>>> GetLibrosByTitulo(string titulo,int pageNumber,int maxItem )
+        {
+            if (pageNumber < 0 || maxItem < 0)
+                return BadRequest("Elementos de paginacion negativos");
+
+            var libros = await _context.Libros.Include("Genero").Where(libro=>libro.Titulo.Contains(titulo)).Skip(pageNumber*maxItem).Take(maxItem).ToListAsync();
+            var libroaGetDTO = _mapper.Map<List<LibroGetDTO>>(libros);
+            return libroaGetDTO;
+        }
+
+        /// <summary>
+        /// Busca un libro por su Id (parámetro numérico de tipo entero)
+        /// El usuario debe estar autenticado
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<LibroGetDTO>> GetLibro(int id)
         {
             var libro = await _context.Libros.Include("Genero").Where(x=>x.Id==id).FirstOrDefaultAsync();
@@ -47,9 +79,15 @@ namespace ApiBiblioteca.Controllers
             return _mapper.Map<LibroGetDTO>(libro);
         }
 
-        // PUT: api/Libroes/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Modifica un libro previamente registrado 
+        /// El usuario debe estar autenticado (rol administrador)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="libroDTO"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "admin")]
         public async Task<ActionResult<LibroGetDTO>> PutLibro(int id, LibroDTO libroDTO)
 
         {
@@ -83,9 +121,14 @@ namespace ApiBiblioteca.Controllers
             return _mapper.Map<LibroGetDTO>(libro);
         }
 
-        // POST: api/Libroes
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Registra un libro
+        /// El usuario debe estar autenticado (rol administrador)
+        /// </summary>
+        /// <param name="libroDTO"></param>
+        /// <returns></returns>
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "admin")]
         public async Task<ActionResult<LibroGetDTO>> PostLibro(LibroDTO libroDTO)
         {
             var libro = _mapper.Map<Libro>(libroDTO);
@@ -98,8 +141,14 @@ namespace ApiBiblioteca.Controllers
             return CreatedAtAction("GetLibro", new { id = libro.Id }, libroDTO);
         }
 
-        // DELETE: api/Libroes/5
+        /// <summary>
+        /// Eliminar un libro por su Id
+        /// El usuario debe estar autenticado (rol administrador)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "admin")]
         public async Task<IActionResult> DeleteLibro(int id)
         {
             var libro = await _context.Libros.FindAsync(id);

@@ -9,6 +9,8 @@ using ApiBiblioteca.Data;
 using ApiBiblioteca.Models;
 using AutoMapper;
 using ApiBiblioteca.DTO.Autor;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ApiBiblioteca.Controllers
 {
@@ -25,16 +27,28 @@ namespace ApiBiblioteca.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/Autors
+  
+        /// <summary>
+        /// Listar los autores con sus livros 
+        /// El usuario debe estar autenticado
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<IEnumerable<AutorGetDTO>>> GetAutores()
         {
             var autores= await _context.Autores.Include(autor => autor.Libros).ThenInclude(libro => libro.Genero).ToListAsync();
             return _mapper.Map<List<AutorGetDTO>>(autores);
         }
 
-        // GET: api/Autors/5
+        /// <summary>
+        /// Lista un autor filtrando por Id 
+        /// El usuario debe estar autenticado
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<AutorGetDTO>> GetAutor(int id)
         {
             var autor = await _context.Autores.Include(autor => autor.Libros).ThenInclude(libro => libro.Genero).Where(x => x.Id == id).FirstOrDefaultAsync();
@@ -47,9 +61,15 @@ namespace ApiBiblioteca.Controllers
             return _mapper.Map<AutorGetDTO>(autor); ;
         }
 
-        // PUT: api/Autors/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Modificar un autor
+        /// El usuario debe estar autenticado (rol administrador)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="autorDTO"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "admin")]
         public async Task<ActionResult<AutorDTO>> PutAutor(int id, AutorDTO autorDTO)
         {
             if (id != autorDTO.Id)
@@ -77,10 +97,14 @@ namespace ApiBiblioteca.Controllers
 
             return autorDTO;
         }
-
-        // POST: api/Autors
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Registrar un autor
+        /// El usuario debe estar autenticado (rol administrador)
+        /// </summary>
+        /// <param name="autorDTO"></param>
+        /// <returns></returns>
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "admin")]
         public async Task<ActionResult<AutorDTO>> PostAutor(AutorDTO autorDTO)
         {
             var autor = _mapper.Map<Autor>(autorDTO);
@@ -92,8 +116,14 @@ namespace ApiBiblioteca.Controllers
             return CreatedAtAction("GetAutor", new { id = autor.Id }, autorDTO);
         }
 
-        // DELETE: api/Autors/5
+        /// <summary>
+        /// Eliminar un autor
+        /// El usuario debe estar autenticado (rol administrador)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "admin")]
         public async Task<IActionResult> DeleteAutor(int id)
         {
             var autor = await _context.Autores.FindAsync(id);

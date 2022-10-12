@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ApiBiblioteca.DTO.UsuarioDTO;
+using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,17 +12,9 @@ namespace ApiBiblioteca.Models
 {
     public class Usuario:Persona
     {
-        [Required]
-        [MaxLength(30)]
-        [MinLength(4)]
-        public string Login { get; set; }
-        [Required]
-        [MaxLength(50)]
-        [MinLength(6)]
-        public string Password { get; set; }
-        public int PermisosId { get; set; }
-        [ForeignKey(nameof(PermisosId))]
-        public Permisos Permisos { get;set;}
+        public string IdentityUserId { get; set; }
+        [NotMapped]
+        public IdentityUser IdentityUser { get; set; }
     }
 
 

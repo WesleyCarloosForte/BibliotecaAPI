@@ -10,6 +10,8 @@ using ApiBiblioteca.Models;
 using AutoMapper;
 using System.Collections;
 using ApiBiblioteca.DTO.Genero;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace ApiBiblioteca.Controllers
 {
@@ -25,8 +27,13 @@ namespace ApiBiblioteca.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/Generoes
+        /// <summary>
+        /// Permite listar los generos
+        /// El usuario debe estar autenticado (rol administrador)
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "admin")]
         public async Task<ActionResult<IEnumerable<GeneroDTO>>> GetGeneros()
         {
             try
@@ -41,8 +48,14 @@ namespace ApiBiblioteca.Controllers
 
         }
 
-        // GET: api/Generoes/5
+        /// <summary>
+        /// Permite listar un genero filtrando por su Id
+        /// El usuario debe estar autenticado (rol administrador)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "admin")]
         public async Task<ActionResult<GeneroDTO>> GetGenero(int id)
         {
             var genero = await _context.Generos.FindAsync(id);
@@ -54,10 +67,15 @@ namespace ApiBiblioteca.Controllers
 
             return _mapper.Map<GeneroDTO> (genero);
         }
-
-        // PUT: api/Generoes/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Permite Modificar un genero
+        /// El usuario debe estar autenticado (rol administrador)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="generoDTO"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "admin")]
         public async Task<ActionResult<GeneroDTO>> PutGenero(int id, GeneroDTO generoDTO)
         {
             if (id != generoDTO.Id)
@@ -86,9 +104,15 @@ namespace ApiBiblioteca.Controllers
             return generoDTO;
         }
 
-        // POST: api/Generoes
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Permite Registrar un genero
+        /// El usuario debe estar autenticado (rol administrador)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="generoDTO"></param>
+        /// <returns></returns>
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "admin")]
         public async Task<ActionResult<GeneroDTO>> PostGenero(GeneroDTO generoDTO)
         {
             var genero = _mapper.Map<Genero>(generoDTO);
@@ -101,8 +125,15 @@ namespace ApiBiblioteca.Controllers
             return CreatedAtAction("GetGenero", new { id = generoDTO.Id }, generoDTO);
         }
 
-        // DELETE: api/Generoes/5
+        /// <summary>
+        /// Permite Eliminar un genero
+        /// El usuario debe estar autenticado (rol administrador)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="generoDTO"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "admin")]
         public async Task<IActionResult> DeleteGenero(int id)
         {
             var genero = await _context.Generos.FindAsync(id);
